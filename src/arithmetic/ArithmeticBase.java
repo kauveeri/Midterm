@@ -5,6 +5,7 @@
  */
 package arithmetic;
 
+import arithmetic.ArithmeticGenerators.Operations;
 import java.util.Scanner;
 
 /** This class takes String input plus,minus,divide and times
@@ -15,12 +16,16 @@ import java.util.Scanner;
  */
 public class ArithmeticBase 
 {
+    public enum Operations {PLUS,MINUS,TIMES,DIVIDE};
  public double x,y;
     double calculate(double x, double y) 
+          
+    public Operations operations ;
         {
         Scanner sc =new Scanner(System.in);
+        ArithmeticGenerators a1 = new ArithmeticGenerators();
         System.out.println("Enter arithmetic operation to Perform: ");
-        String s= sc.next();
+        Operations operations = ArithmeticGenerators.Operations.operations();
         switch (s.toUpperCase()) 
         {
             case "PLUS":
